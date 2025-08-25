@@ -1,62 +1,94 @@
-# Gerenciador de Tarefas Minimalista (< 14KB)
 
-Este é um aplicativo de gerenciador de tarefas extremamente leve e eficiente, construído com HTML, CSS e TypeScript puros. O objetivo principal deste projeto é fornecer uma ferramenta funcional de gerenciamento de tarefas, mantendo o tamanho total dos recursos abaixo de 14KB.
-
-## Funcionalidades
-
-- **Adicionar, remover e concluir tarefas:** Gerencie suas tarefas diárias com uma interface simples e intuitiva.
-- **Persistência de dados:** As tarefas são salvas no `localStorage` do seu navegador, para que não se percam ao recarregar a página.
-- **Design Limpo e Responsivo:** A interface se adapta a diferentes tamanhos de tela, funcionando bem em desktops e dispositivos móveis.
-- **Foco em Acessibilidade:** Uso de atributos ARIA e navegação por teclado para garantir que o aplicativo seja utilizável por todos.
-- **Sem Dependências:** Construído sem frameworks ou bibliotecas externas para garantir o mínimo de sobrecarga.
+<div align="center">
+	<h1>📝 Gerenciador de Tarefas Minimalista (< 14KB)</h1>
+	<p>
+		<strong>Ultra leve, rápido e funcional.</strong><br>
+		<em>HTML, CSS e TypeScript puros — sem dependências externas!</em>
+	</p>
+</div>
 
 ---
 
-## Por que 14KB é Importante para um Carregamento Rápido?
+## 🚀 Funcionalidades
 
-Manter o tamanho total dos recursos críticos (HTML, CSS e JavaScript) abaixo de 14KB é uma estratégia de otimização de performance fundamental, especialmente para o carregamento inicial da página. A razão para isso está relacionada a como a internet funciona, especificamente o protocolo TCP.
+- <strong>Adicionar, remover e concluir tarefas:</strong> Interface simples e intuitiva.
+- <strong>Persistência de dados:</strong> Tarefas salvas no <code>localStorage</code> do navegador.
+- <strong>Design Limpo e Responsivo:</strong> Adapta-se a desktops e dispositivos móveis.
+- <strong>Foco em Acessibilidade:</strong> ARIA e navegação por teclado.
+- <strong>Sem Dependências:</strong> Nenhum framework ou biblioteca externa.
 
-### A Janela de Congestionamento Inicial do TCP
+---
 
-Quando seu navegador solicita uma página da web, ele estabelece uma conexão com o servidor usando o protocolo TCP. Para evitar sobrecarregar a rede, o TCP começa enviando uma pequena quantidade de dados e aguarda a confirmação de que foram recebidos antes de enviar mais.
+## ⚡ Por que 14KB é Importante para um Carregamento Rápido?
 
-Essa quantidade inicial de dados é chamada de **Janela de Congestionamento Inicial (Initial Congestion Window - `cwnd`)** e, na maioria dos sistemas modernos, é de aproximadamente **14KB**.
+Manter o tamanho dos recursos críticos (<strong>HTML, CSS e JavaScript</strong>) abaixo de <strong>14KB</strong> é essencial para performance. Isso está relacionado ao funcionamento do protocolo <strong>TCP</strong>.
 
-### O Impacto no Tempo de Carregamento
+### 🛣️ Janela de Congestionamento Inicial do TCP
 
-1.  **Menos Viagens de Ida e Volta (Round Trips):** Se todos os recursos essenciais para renderizar a primeira visualização da sua página (o "conteúdo acima da dobra") couberem nesses 14KB, o navegador pode receber tudo o que precisa na primeira viagem de ida e volta de dados entre ele e o servidor.
+Quando o navegador solicita uma página, o TCP envia uma quantidade inicial de dados chamada <strong>Janela de Congestionamento Inicial (<code>cwnd</code>)</strong>, geralmente <strong>14KB</strong>.
 
-2.  **Renderização Imediata:** Assim que o navegador recebe esses dados, ele pode começar a analisar o HTML, aplicar o CSS e executar o JavaScript para renderizar a página. O usuário vê o conteúdo quase instantaneamente.
+### ⏱️ Impacto no Tempo de Carregamento
 
-3.  **Evitando o Atraso:** Se os recursos excederem 14KB, o navegador precisa esperar por viagens de ida e volta adicionais para baixar o restante dos dados antes de poder renderizar a página. Cada viagem de ida e volta adiciona latência, que é o tempo que leva para os dados viajarem pela rede. Em redes móveis ou lentas, essa latência pode ser significativa, atrasando visivelmente o carregamento da página.
+1. <strong>Menos Round Trips:</strong> Recursos essenciais abaixo de 14KB chegam na primeira viagem de dados.
+2. <strong>Renderização Imediata:</strong> O navegador pode exibir o conteúdo quase instantaneamente.
+3. <strong>Menos Latência:</strong> Recursos acima de 14KB exigem mais viagens, aumentando o tempo de carregamento, especialmente em redes lentas.
 
-Em resumo, ao manter nosso aplicativo abaixo do limite de 14KB, garantimos que ele possa ser entregue e renderizado na **velocidade máxima que a rede permite**, proporcionando uma experiência de usuário superior, especialmente em conexões de internet mais lentas ou em dispositivos com recursos limitados. Isso se traduz em menor taxa de rejeição, maior engajamento e usuários mais satisfeitos.
+> <strong>Resumo:</strong> Manter o app abaixo de 14KB garante entrega e renderização na <strong>velocidade máxima</strong>, melhorando a experiência do usuário em qualquer conexão.
 
+---
 
+## 📦 Estrutura do Projeto
 
-14 KB tem 14.336 bytes (14 × 1024).
+```
+index.tsx        # Código principal (TypeScript)
+index.js         # JavaScript gerado
+index.js.map     # Mapa de origem para depuração
+index.css        # Estilos
+index.html       # Página principal
+package.json     # Dependências e scripts
+tsconfig.json    # Configuração do TypeScript
+```
 
-hard refresh (Ctrl+F5). limpar cache
+---
 
-index.tsx:  o arquivo principal do aplicativo 
-index.js e index.js.map: Arquivos JavaScript gerados após a compilação do TypeScript.
-index.css: Estilos do aplicativo.
-index.html: Página principal do aplicativo.
-package.json: Gerencia dependências e scripts do projeto.
-tsconfig.json: Configurações do compilador TypeScript.
+## 🛠️ Processo de Compilação
 
-Processo de Compilação
-Usando TypeScript. O comando npx tsc compila arquivos .tsx e .ts para .js, conforme definido no tsconfig.json. O resultado são arquivos .js e .js.map (mapas de origem para depuração).
+- Usando <strong>TypeScript</strong>.
+- Comando: <code>npx tsc</code> compila <code>.tsx</code> e <code>.ts</code> para <code>.js</code>.
+- Resultado: <code>.js</code> e <code>.js.map</code>.
 
-Como calcular o tamanho da aplicação
-O tamanho final da aplicação para distribuição geralmente é o tamanho dos arquivos JavaScript, CSS e HTML que serão enviados ao cliente.
-Para calcular o tamanho, some os tamanhos dos arquivos relevantes (por exemplo, index.js, index.css, index.html).
+---
+
+## 📏 Como Calcular o Tamanho da Aplicação
+
+O tamanho final para distribuição é a soma dos arquivos <strong>JavaScript</strong>, <strong>CSS</strong> e <strong>HTML</strong> enviados ao cliente.
+
+Exemplo (PowerShell):
+```powershell
 Get-Item .\index.js, .\index.css, .\index.html | Select-Object Name, Length
+```
 
-index.js: 3446 bytes
-index.css: 2806 bytes
-index.html: 1137 bytes
-Total: 3446 + 2806 + 1137 = 7390 bytes
+| Arquivo     | Tamanho (bytes) |
+|-------------|-----------------|
+| index.js    | 3446            |
+| index.css   | 2806            |
+| index.html  | 1137            |
+| **Total**   | **7390**        |
 
- kilobytes (KB):
+**Em kilobytes (KB):**
+```
 7390 bytes ÷ 1024 ≈ 7,21 KB
+```
+
+---
+
+## 💡 Dicas
+
+- <strong>Hard refresh:</strong> <kbd>Ctrl</kbd> + <kbd>F5</kbd> para limpar cache.
+- <strong>Limite de 14KB:</strong> 14 × 1024 = <strong>14.336 bytes</strong>.
+
+---
+
+<div align="center">
+	<sub>Feito com ❤️ para máxima eficiência e velocidade.</sub>
+</div>
