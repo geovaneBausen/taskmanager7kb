@@ -87,8 +87,10 @@ Get-Item .\index.js, .\index.css, .\index.html | Select-Object Name, Length
 - <strong>Limite de 14KB:</strong> 14 × 1024 = <strong>14.336 bytes</strong>.
 
 ---
+## 💡 AINDA DA PRA REDUZIR MAIS?
 
-## 🧩 Otimização de Caracteres e Redução de Tamanho
+
+## 🧩 Otimização de Caracteres e Redução de Tamanho, 
 
 Para garantir que o aplicativo ficasse o menor possível, foram aplicadas as seguintes técnicas de otimização:
 
@@ -100,6 +102,17 @@ Para garantir que o aplicativo ficasse o menor possível, foram aplicadas as seg
 - **Recursos inline:** Ícone favicon em SVG foi incluído diretamente na tag `<link>`, evitando arquivos extras.
 
 > Essas práticas garantem que o carregamento inicial seja o mais rápido possível, mantendo o tamanho total dos arquivos muito abaixo do limite de 14KB.
+
+### 📊 Tabela de Tamanhos Antes e Depois da Otimização
+
+| Arquivo         | Original (bytes) | Minificado (bytes) |
+|-----------------|------------------|--------------------|
+| index.js        | 3446             | 2112               |
+| index.css       | 2806             | 2124               |
+| index.html      | 1137             | 949                |
+| **Total**       | **7390**         | **5185**           |
+
+> Redução total: **2205 bytes** (~30%)
 
 ---
 
