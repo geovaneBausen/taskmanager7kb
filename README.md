@@ -1,4 +1,3 @@
-
 <div align="center">
 	<h1>📝 Gerenciador de Tarefas Minimalista (< 14KB)</h1>
 	<p>
@@ -86,6 +85,21 @@ Get-Item .\index.js, .\index.css, .\index.html | Select-Object Name, Length
 
 - <strong>Hard refresh:</strong> <kbd>Ctrl</kbd> + <kbd>F5</kbd> para limpar cache.
 - <strong>Limite de 14KB:</strong> 14 × 1024 = <strong>14.336 bytes</strong>.
+
+---
+
+## 🧩 Otimização de Caracteres e Redução de Tamanho
+
+Para garantir que o aplicativo ficasse o menor possível, foram aplicadas as seguintes técnicas de otimização:
+
+- **Minificação automática:** Utilização de ferramentas como Terser (JavaScript), cssnano (CSS) e html-minifier-terser (HTML) para remover espaços, quebras de linha, comentários e reduzir nomes de variáveis.
+- **HTML compacto:** O arquivo HTML foi escrito em uma única linha, sem espaços ou quebras desnecessárias, reduzindo o número de caracteres transmitidos.
+- **CSS enxuto:** Estilos foram agrupados e simplificados, eliminando duplicidades e regras não utilizadas.
+- **JavaScript otimizado:** Funções e variáveis foram reduzidas ao essencial, removendo código morto e simplificando a lógica.
+- **Sem dependências externas:** Nenhum framework ou biblioteca foi incluído, evitando sobrecarga.
+- **Recursos inline:** Ícone favicon em SVG foi incluído diretamente na tag `<link>`, evitando arquivos extras.
+
+> Essas práticas garantem que o carregamento inicial seja o mais rápido possível, mantendo o tamanho total dos arquivos muito abaixo do limite de 14KB.
 
 ---
 
