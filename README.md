@@ -90,7 +90,7 @@ Get-Item .\index.js, .\index.css, .\index.html | Select-Object Name, Length
 ## 💡 AINDA DA PRA REDUZIR MAIS?
 
 
-## 🧩 Otimização de Caracteres e Redução de Tamanho, 
+## 🧩 Otimização de Caracteres e Redução de Tamanho
 
 Para garantir que o aplicativo ficasse o menor possível, foram aplicadas as seguintes técnicas de otimização:
 
