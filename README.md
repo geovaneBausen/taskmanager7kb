@@ -115,6 +115,8 @@ Para garantir que o aplicativo ficasse o menor possível, foram aplicadas as seg
 > Redução total: **2205 bytes** (~30%)
 
 ---
+A ultra otimização:
+https://github.com/geovaneBausen/min-tamanho-task-manager
 
 <div align="center">
 	<sub>Feito com ❤️ para máxima eficiência e velocidade.</sub>
